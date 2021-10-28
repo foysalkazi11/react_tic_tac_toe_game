@@ -1,0 +1,18 @@
+.squareContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: slateblue;
+    font-size: 50px;
+    font-weight: 800;
+    color: #ddd;
+    
+}
+.clicked{
+    
+    background-color: rgb(88, 70, 201);
+    cursor: not-allowed;
+    
+}
