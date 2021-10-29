@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
-import Board from './Board'
-import calculateWinner from '../helper/calculateWinner'
+import Board from './Board';
+import calculateWinner from '../helper/calculateWinner';
+import speak from '../helper/speak';
 
 const Game = () => {
     const [board,setBoard] = useState(Array(9).fill(null));
@@ -10,12 +11,6 @@ const Game = () => {
     const [playerStatus,setPlayerStatus] = useState("First player")
     const winner = calculateWinner(board)
 
-    const speak = (text="Please tell me what should I say",lang="en-US")=>{
-        var utterance = new window.SpeechSynthesisUtterance();
-            utterance.lang = lang;
-            utterance.text = text;
-            window.speechSynthesis.speak(utterance);
-    }
 
     const handleClick = index =>{
         const copyBoard = [...board]
@@ -71,7 +66,6 @@ const Game = () => {
             <button className="restartButton" onClick={resetBoard}>Re-start</button>
              :null}
             
-             
         </div>
     )
 }
